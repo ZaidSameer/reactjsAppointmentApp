@@ -19,7 +19,7 @@ class ListAppointments extends Component {
 
                     <div className="pet-info media-body">
                       <div className="pet-head d-flex">
-                        <span className="pet-name display-4">{item.aptId}) {item.petName}</span>
+                        <span className="pet-name display-4">{item.petName}</span>
                         <span className="apt-date ml-auto">
                             [<Moment
                                 date={item.aptDate}
