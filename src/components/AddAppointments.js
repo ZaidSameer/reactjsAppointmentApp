@@ -10,7 +10,7 @@ class AddAppointments extends Component {
       ownerName: '',
       aptDate: '',
       aptTime: '',
-      aptNote: ''
+      aptNotes: ''
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
@@ -32,7 +32,7 @@ class AddAppointments extends Component {
       petName: this.state.petName,
       ownerName: this.state.ownerName,
       aptDate: this.state.aptDate + ' ' + this.state.aptTime,
-      aptNote: this.state.aptNote,
+      aptNotes: this.state.aptNotes,
     }
 
     this.props.addAppointment(tempApt);
@@ -42,7 +42,7 @@ class AddAppointments extends Component {
       ownerName: '',
       aptDate: '',
       aptTime: '',
-      aptNote: ''
+      aptNotes: ''
     });
     this.props.toggleForm();
   }
@@ -149,7 +149,7 @@ class AddAppointments extends Component {
                       name="aptNotes"
                       id="aptNotes"
                       placeholder="Appointment Notes"
-                      value={this.state.aptNote}
+                      value={this.state.aptNotes}
                       onChange={this.handleChange}
                     />
                   </div>

@@ -10,6 +10,7 @@ import {without} from 'lodash';
 //https://lnkd.in/guJb2yU
 //https://lnkd.in/g9Ab4dM
 //https://lnkd.in/gKApk2Q
+//https://lnkd.in/gcrTSj9
 
 class App extends Component {
 
@@ -18,6 +19,8 @@ class App extends Component {
     this.state = {
       myAppointments: [],
       formDisplay: false,
+      orderBy: 'petName',
+      orderDir: 'desc',
       lastIndex: 1,
     };
     this.deleteAppointment = this.deleteAppointment.bind(this);
@@ -70,6 +73,21 @@ class App extends Component {
 
   render() {
 
+    let order;
+    let filterApts = this.state.myAppointments;
+    if(this.state.orderDir === 'asc') {
+      order = 1;
+    } else {
+      order = -1;
+    }
+
+    filterApts.sort( (a, b) => {
+      if (a[this.state.orderBy].toLowerCase() < b[this.state.orderBy].toLowerCase() ){
+        return -1 * order;
+      } else{
+        return 1 * order;
+      }
+    });
     return (
       <main className="page bg-white" id="petratings">
         <div className="container">
@@ -83,7 +101,7 @@ class App extends Component {
                 />
                 <SearchAppointments />
                 <ListAppointments
-                  appointments={this.state.myAppointments}
+                  appointments={filterApts}
                   deleteAppointment={this.deleteAppointment}
                 />
               </div>
