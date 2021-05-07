@@ -1,5 +1,7 @@
 # Reactjs Appointment App
 =======
+
+Please follow this tutorial for learning [React.js: Building an Interface (2019)](https://www.linkedin.com/learning/react-js-building-an-interface-2019/next-steps)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
